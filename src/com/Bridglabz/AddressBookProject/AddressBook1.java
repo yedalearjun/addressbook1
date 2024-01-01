@@ -114,4 +114,13 @@ public class AddressBook1 {
             System.out.println(contacts);
         }
     }
+    public void searchPersonCityOrState(){
+        System.out.println("Enter the name of City or State : ");
+        String cityOrState=sc.nextLine();
+        set
+                .stream()
+                .filter(contacts -> contacts.getCity().equals(cityOrState)||contacts.getState().equals(cityOrState))
+                .forEach(System.out::println);
+
+    }
 }

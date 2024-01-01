@@ -164,7 +164,10 @@ public class AddressBook {
                 default:
                     System.out.println("Please enter valid choice: ");
                     break;
-
+                case 7:
+                    System.out.println("Ability to add multiple AddressBook..");
+                    addressBook1.addsearchPersonCityOrState();
+                    break;
             }
         } while (ordering);
     }
