@@ -3,7 +3,10 @@ package com.Bridglabz.AddressBookProject;
 import java.util.HashSet;
 import java.util.Scanner;
 /*
-@Desc: AddressBook class is a class which contains Contact info and add contact method.class
+@Desc: AddressBook class is a class which contains Contact info method.
+1:addContact Method.
+2:updateContact Method.
+3:DeleteContact Method.
 
 @Param:Its a taking a object from the user as parameter.
 
@@ -82,6 +85,28 @@ public class AddressBook {
         }
     }
 
+
+    // Delete Contact details....
+    public void deleteContacts() {
+        boolean found = false;
+        System.out.println("Enter your first name: ");
+        String firstName = sc.nextLine();
+        Contacts contactDelete = null;
+        for (Contacts contacts2 : set) {
+            if (contacts2.getFirstName().equals(contacts2.firstName)) {
+                contactDelete = contacts2;
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Contact details is not present..");
+        } else {
+            set.remove(contactDelete);
+            System.out.println("Contact details deleted successfully");
+        }
+
+    }
+
     static boolean ordering = true;
 
     public static void main(String[] args) {
@@ -118,7 +143,7 @@ public class AddressBook {
                 // Delete Contacts....
                 case 4:
                     System.out.println("Delete Contacts: ");
-
+                    addressBook.deleteContacts();
                     break;
                 // Exit from program
                 case 5:
