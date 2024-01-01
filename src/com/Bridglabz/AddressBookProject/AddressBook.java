@@ -104,7 +104,17 @@ public class AddressBook {
             set.remove(contactDelete);
             System.out.println("Contact details deleted successfully");
         }
+    }
 
+    // Add multiple contacts in addressBook...
+    public void addMultipleContacts() {
+        System.out.println("Enter number of contacts to add into  AddressBook...");
+        int num = sc.nextInt();
+        for (int i = 0; i < num; i++) {
+            addContact();
+            System.out.println(i + 1);
+            System.out.println("Multiple Contact added successfully in your addressBook...");
+        }
     }
 
     static boolean ordering = true;
@@ -119,7 +129,7 @@ public class AddressBook {
                     + "\n2. View Contact details"
                     + "\n3.Update Contact details"
                     + "\n4. Delete Contact details"
-                    + "\n5. View All Contact details"
+                    + "\n5. Add multiple Contact in addressBook"
                     + "\n6. Exit ");
             System.out.println("Enter the choice! :");
             int choice = sc.nextInt();
@@ -148,7 +158,7 @@ public class AddressBook {
                 // Exit from program
                 case 5:
                     System.out.println("Ability to add multiple AddressBook..");
-
+                    addressBook.addMultipleContacts();
                     break;
                 case 6:
                 default:
